@@ -15,7 +15,7 @@ import {
 
 import database from '@react-native-firebase/database';
 import app from '@react-native-firebase/app';
-import { Button, Item, Input, Label } from 'native-base';
+import { Button, Item, Input, Label, Card, CardItem } from 'native-base';
 import colors from '../../../config/colorsConfig/index';
 import header from '../../../config/headerConfig/index';
 import style from './style';
@@ -36,7 +36,7 @@ function AllStudents(props) {
     }, []);
 
     const moreInfo = (e) => {
-        props.navigation.navigate("StudentProfile", {UserName: UserName, studentUserName: e})
+        props.navigation.navigate("StudentProfile", { UserName: UserName, studentUserName: e })
     }
 
     return (
@@ -79,32 +79,47 @@ function AllStudents(props) {
                             key={jobs.key}
                             renderItem={(data) => {
                                 return (
-
-                                    <View>
-                                        <View style={style.myMainDispayCont}>
-                                            <Text style={style.font1}>{data.item.StudentName}{"\n"}
-                                                <Text style={{ fontSize: 17, paddingTop: 18, color: colors.buttonColor }}>
-                                                   {data.item.StudentTitle}
-                                                </Text>
-                                            </Text>
-                                            <Button style={style.button} block success>
-                                            </Button>
-                                            <TouchableOpacity
-                                                style={style.button1}
-                                                onPress={() => moreInfo(data.item.StudentName)}
-                                                activeOpacity={0.9}>
-                                                <Text
-                                                    style={{ height: "80%", paddingTop: 12, paddingLeft: 12, paddingRight: 10, color: 'white', fontWeight: 'bold' }}>
-                                                    More Info
-                                    </Text>
-                                            </ TouchableOpacity>
-
-                                        </View>
-                                    </View>
+                                    <Card>
+                                    <CardItem>
+                                        <Text style={style.font1}>
+                                            {data.item.StudentName} &nbsp;
+                                            <Text style={{color: colors.textColorInsideBox_SubHeading, fontSize: 15}}>
+                                            ({data.item.StudentTitle})
+                                        </Text>
+                                        </Text>
+                                        <Button style={style.button} onPress={() => moreInfo(data.item.userName)}>
+                                            <Text style={style.btnText}>More Info</Text>
+                                        </Button>
+                                    </CardItem>
+                                    </Card>
                                 )
                             }}
                             keyExtractor={users => users.id} />
                     </ScrollView>
+
+
+                    {/*// <View>
+                                    //     <View style={style.myMainDispayCont}>
+                                    //         <Text style={style.font1}>{data.item.StudentName}{"\n"}
+                                    //             <Text style={{ fontSize: 17, paddingTop: 18, color: colors.buttonColor }}>
+                                    //                {data.item.StudentTitle}
+                                    //             </Text>
+                                    //         </Text>
+                                    //         <Button style={style.button} block success>
+                                    //         </Button>
+                                    //         <TouchableOpacity
+                                    //             style={style.button1}
+                                    //             onPress={() => moreInfo(data.item.userName)}
+                                    //             activeOpacity={0.9}>
+                                    //             <Text
+                                    //                 style={{ height: "80%", paddingTop: 12, paddingLeft: 12, paddingRight: 10, color: 'white', fontWeight: 'bold' }}>
+                                    //                 More Info
+                                    // </Text>
+                                    //         </ TouchableOpacity>
+
+                                    //     </View>
+                                    // </View> */}
+
                 </View>
 
             </View>

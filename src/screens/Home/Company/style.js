@@ -75,7 +75,7 @@ export default StyleSheet.create({
     f3:
     {
         marginTop: 30,
-        marginBottom: 5,
+        marginBottom: 15,
         color: "#353535",
         fontSize: 23,
         fontWeight: 'bold',
@@ -116,6 +116,52 @@ export default StyleSheet.create({
         fontSize: 18,
         color: "white"
     },
+    // myMainDispayCont:
+    // {
+    //     marginLeft: 5,
+    //     marginRight: -40,
+    //     flex: 1,
+    //     height: 70,
+    //     flexDirection: 'row',
+    //     width: "100%",
+    //     backgroundColor: 'white',
+    //     marginBottom: 10,
+    //     borderBottomColor: '#D3D3D3',
+    //     borderBottomWidth: 2,
+
+    // },
+    // button1:
+    // {
+    //     backgroundColor: colors.buttonColor,
+    //     marginLeft: 'auto',
+    //     marginRight: 10,
+    //     marginTop: 10,
+    //     paddingTop: 2,
+    //     borderRadius: 10,
+    //     height: "70%",
+    //     shadowColor: "#000",
+    //     shadowOffset: {
+    //         width: 0,
+    //         height: 7,
+    //     },
+    //     shadowOpacity: 0.43,
+    //     shadowRadius: 9.51,
+    //     elevation: 8,
+    // },
+    // font1:
+    // {
+    //     paddingTop: 10,
+    //     color: 'black',
+    //     fontSize: 19,
+        
+    // },
+    // button:
+    // {
+    //     backgroundColor: colors.buttonColor,
+    //     marginLeft: 'auto',
+    //     marginRight: 30,
+    //     marginTop: 10
+    // }
     myMainDispayCont:
     {
         marginLeft: 5,
@@ -148,18 +194,36 @@ export default StyleSheet.create({
         shadowRadius: 9.51,
         elevation: 8,
     },
-    font1:
-    {
-        paddingTop: 10,
-        color: 'black',
-        fontSize: 19,
-        
-    },
     button:
     {
         backgroundColor: colors.buttonColor,
         marginLeft: 'auto',
-        marginRight: 30,
-        marginTop: 10
-    }
+        // marginRight: 30,
+        marginTop: 'auto',
+        marginBottom: 'auto',
+        padding: 10,
+        borderRadius: 10,
+        shadowColor: "#000",
+        shadowOffset: {
+            width: 0,
+            height: 7,
+        },
+        shadowOpacity: 0.43,
+        shadowRadius: 9.51,
+        elevation: 8,
+    },
+    btnText:{
+        color: '#fff',
+        fontWeight: 'bold'
+    },
+    font1:
+    {
+        paddingTop: 10,
+        paddingBottom: 10,
+        color: 'black',
+        fontSize: 18,
+        width: "75%",
+        fontWeight: '600',
+        marginRight: 'auto'
+    },
 });

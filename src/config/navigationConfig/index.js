@@ -72,7 +72,7 @@ function Navigation(props) {
               backgroundColor: color.headerColor,
               height: -10
             },
-            headerTintColor: '#3250ce',
+            headerTintColor: color.headerArrowColorSecondary,
             headerTitleStyle: {
               fontWeight: 'bold',
             },
@@ -86,7 +86,7 @@ function Navigation(props) {
               backgroundColor: color.headerColor,
               height: -10
             },
-            headerTintColor: '#3250ce',
+            headerTintColor: color.headerArrowColorSecondary,
             headerTitleStyle: {
               fontWeight: 'bold',
             },
@@ -100,7 +100,7 @@ function Navigation(props) {
               backgroundColor: color.headerColor,
               height: -10
             },
-            headerTintColor: '#3250ce',
+            headerTintColor: color.headerArrowColorSecondary,
             headerTitleStyle: {
               fontWeight: 'bold',
             },
@@ -114,7 +114,7 @@ function Navigation(props) {
               backgroundColor: color.headerColor,
               height: -10
             },
-            headerTintColor: '#3250ce',
+            headerTintColor: color.headerArrowColorSecondary,
             headerTitleStyle: {
               fontWeight: 'bold',
             },
@@ -128,7 +128,7 @@ function Navigation(props) {
               backgroundColor: color.headerColor,
               height: -10
             },
-            headerTintColor: '#3250ce',
+            headerTintColor: color.headerArrowColorSecondary,
             headerTitleStyle: {
               fontWeight: 'bold',
             },
@@ -142,7 +142,7 @@ function Navigation(props) {
               backgroundColor: color.headerColor,
               height: -10
             },
-            headerTintColor: '#3250ce',
+            headerTintColor: color.headerArrowColorSecondary,
             headerTitleStyle: {
               fontWeight: 'bold',
             },
@@ -156,7 +156,7 @@ function Navigation(props) {
               backgroundColor: color.headerColor,
               height: -10
             },
-            headerTintColor: '#3250ce',
+            headerTintColor: color.headerArrowColorSecondary,
             headerTitleStyle: {
               fontWeight: 'bold',
             },

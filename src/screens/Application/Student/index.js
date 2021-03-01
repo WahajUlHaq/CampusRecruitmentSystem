@@ -15,7 +15,7 @@ import {
 
 import database from '@react-native-firebase/database';
 import app from '@react-native-firebase/app';
-import { Button, Item, Input, Label } from 'native-base';
+import { Button, Item, Input, Label, Card, CardItem } from 'native-base';
 import colors from '../../../config/colorsConfig/index';
 import header from '../../../config/headerConfig/index';
 import style from './style';
@@ -81,27 +81,40 @@ function Application_User(props) {
                             renderItem={(data) => {
                                 return (
 
-                                    <View>
-                                        <View style={style.myMainDispayCont}>
-                                            <Text style={style.font1}>{data.item.JobTitle}{"\n"}
-                                                <Text style={{ fontSize: 17, paddingTop: 18, color: colors.buttonColor }}>
-                                                    Skills: {data.item.Skills}
-                                                </Text>
-                                            </Text>
-                                            <Button style={style.button} block success>
-                                            </Button>
-                                            <TouchableOpacity
-                                                style={style.button1}
-                                                onPress={() => moreInfo(data.item.JobID, data.item.id )}
-                                                activeOpacity={0.9}>
-                                                <Text
-                                                    style={{ height: "80%", paddingTop: 12, paddingLeft: 12, paddingRight: 10, color: 'white', fontWeight: 'bold' }}>
-                                                    More Info
-                                    </Text>
-                                            </ TouchableOpacity>
+                                    // <View>
+                                    //     <View style={style.myMainDispayCont}>
+                                    //         <Text style={style.font1}>{data.item.JobTitle}{"\n"}
+                                    //             <Text style={{ fontSize: 17, paddingTop: 18, color: colors.buttonColor }}>
+                                    //                 Skills: {data.item.Skills}
+                                    //             </Text>
+                                    //         </Text>
+                                    //         <Button style={style.button} block success>
+                                    //         </Button>
+                                    //         <TouchableOpacity
+                                    //             style={style.button1}
+                                    //             onPress={() => moreInfo(data.item.JobID, data.item.id )}
+                                    //             activeOpacity={0.9}>
+                                    //             <Text
+                                    //                 style={{ height: "80%", paddingTop: 12, paddingLeft: 12, paddingRight: 10, color: 'white', fontWeight: 'bold' }}>
+                                    //                 More Info
+                                    // </Text>
+                                    //         </ TouchableOpacity>
 
-                                        </View>
-                                    </View>
+                                    //     </View>
+                                    // </View>
+
+                                    <Card>
+                                        <CardItem>
+                                            <Text style={style.font1}>
+                                                {data.item.JobTitle}
+                                            </Text>
+                                            <Button style={style.button} onPress={() => moreInfo(data.item.JobID, data.item.id)}>
+                                                <Text style={style.btnText}>More Info</Text>
+                                            </Button>
+                                        </CardItem>
+                                    </Card>
+
+
                                 )
                             }}
                             keyExtractor={users => users.id} />

@@ -29,7 +29,7 @@ export default StyleSheet.create({
         borderTopEndRadius: 23,
         backgroundColor: colors.innerBoxColor,
         alignItems: 'center',
-        justifyContent: 'center',
+        // justifyContent: 'center',
     },
     subContainer2_1:
     {
@@ -80,6 +80,7 @@ export default StyleSheet.create({
         color: "#353535",
         fontSize: 23,
         fontWeight: 'bold',
+        paddingBottom: 10
     },
     f2:
     {
@@ -158,18 +159,36 @@ export default StyleSheet.create({
         shadowRadius: 9.51,
         elevation: 8,
     },
-    font1:
-    {
-        paddingTop: 10,
-        color: 'black',
-        fontSize: 19,
-        
-    },
     button:
     {
         backgroundColor: colors.buttonColor,
         marginLeft: 'auto',
-        marginRight: 30,
-        marginTop: 10
-    }
+        // marginRight: 30,
+        marginTop: 'auto',
+        marginBottom: 'auto',
+        padding: 10,
+        borderRadius: 10,
+        shadowColor: "#000",
+        shadowOffset: {
+            width: 0,
+            height: 7,
+        },
+        shadowOpacity: 0.43,
+        shadowRadius: 9.51,
+        elevation: 8,
+    },
+    btnText:{
+        color: '#fff',
+        fontWeight: 'bold'
+    },
+    font1:
+    {
+        paddingTop: 10,
+        paddingBottom: 10,
+        color: 'black',
+        fontSize: 18,
+        width: "75%",
+        fontWeight: '600',
+        marginRight: 'auto'
+    },
 });

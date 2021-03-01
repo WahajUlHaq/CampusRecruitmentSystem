@@ -35,7 +35,7 @@ function StudentHome(props) {
     }, []);
 
     const moreInfo = (e) => {
-        props.navigation.navigate("ViewJob_User", {UserName: UserName, id: e})
+        props.navigation.navigate("ViewJob_User", { UserName: UserName, id: e })
     }
 
     return (
@@ -79,27 +79,16 @@ function StudentHome(props) {
                             renderItem={(data) => {
                                 return (
 
-                                    <View>
-                                        <View style={style.myMainDispayCont}>
-                                            <Text style={style.font1}>{data.item.Title}{"\n"}
-                                                <Text style={{ fontSize: 17, paddingTop: 18, color: colors.buttonColor }}>
-                                                    Skills: {data.item.Skills}
-                                                </Text>
+                                    <Card>
+                                        <CardItem>
+                                            <Text style={style.font1}>
+                                            {data.item.Title}
                                             </Text>
-                                            <Button style={style.button} block success>
+                                            <Button style={style.button} onPress={() => moreInfo(data.item.id)}>
+                                                <Text style={style.btnText}>More Info</Text>
                                             </Button>
-                                            <TouchableOpacity
-                                                style={style.button1}
-                                                onPress={() => moreInfo(data.item.id)}
-                                                activeOpacity={0.9}>
-                                                <Text
-                                                    style={{ height: "80%", paddingTop: 12, paddingLeft: 12, paddingRight: 10, color: 'white', fontWeight: 'bold' }}>
-                                                    More Info
-                                    </Text>
-                                            </ TouchableOpacity>
-
-                                        </View>
-                                    </View>
+                                        </CardItem>
+                                    </Card>
                                 )
                             }}
                             keyExtractor={users => users.id} />

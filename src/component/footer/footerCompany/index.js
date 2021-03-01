@@ -44,14 +44,14 @@ function FooterCompany(props) {
                     onPress={() => toAddJob()}
                 >
                     <Icon active name="add" />
-                    <Text>Add Job</Text>
+                    <Text>Add</Text>
                 </Button>
 
                 <Button style={styles.bg} vertical active
                     onPress={() => toApplication()}
                 >
                     <Icon active name="book" />
-                    <Text>Application</Text>
+                    <Text>Requests</Text>
                 </Button>
 
                 <Button style={styles.bg} vertical active
