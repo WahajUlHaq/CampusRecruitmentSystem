@@ -1,4 +1,4 @@
-import {StyleSheet} from 'react-native';
+import { StyleSheet } from 'react-native';
 import colors from '../../../config/colorsConfig/index';
 
 export default StyleSheet.create({
@@ -74,21 +74,23 @@ export default StyleSheet.create({
     },
     f3:
     {
-        marginTop: 30,
-        marginBottom: 5,
-        color: "#353535",
+        marginTop: 20,
+        marginBottom: 10,
+        color: colors.textColorInsideBox_Heading,
         fontSize: 23,
         fontWeight: 'bold',
     },
-    f2:
+    f7:
     {
-        color: "#353535",
+        color: colors.buttonColor,
         fontSize: 18,
         fontWeight: 'bold',
-        marginTop: 10,
-        marginBottom: 20,
     },
-
+    f8:
+    {
+        color: colors.textColorInsideBox_Heading,
+        fontSize: 16,
+    },
     button1:
     {
         backgroundColor: colors.buttonColor,
@@ -98,10 +100,12 @@ export default StyleSheet.create({
     button2:
     {
         backgroundColor: colors.buttonColor,
-        width: "100%",
+        width: "60%",
         marginTop: 20,
         borderRadius: 20,
         marginBottom: 20,
+        marginLeft: 'auto',
+        marginRight: 'auto'
     },
     button3:
     {
@@ -109,33 +113,21 @@ export default StyleSheet.create({
         width: "100%",
         marginTop: 20,
         borderRadius: 20,
-        marginBottom: 15
+        marginBottom: 15,
     },
     b1:
     {
         fontSize: 18,
         color: "white"
     },
-    myMainDispayCont:
-    {
-        marginLeft: 5,
-        marginRight: -40,
-        flex: 1,
-        height: 70,
-        flexDirection: 'row',
-        width: "100%",
-        backgroundColor: 'white',
-        marginBottom: 10,
-        borderBottomColor: '#D3D3D3',
-        borderBottomWidth: 2,
-
-    },
     button1:
     {
         backgroundColor: colors.buttonColor,
         marginLeft: 'auto',
-        marginRight: 10,
-        marginTop: 10,
+        marginRight: 'auto',
+        width: "50%",
+        marginTop: 20,
+        marginBottom: 40,
         paddingTop: 2,
         borderRadius: 10,
         height: "70%",
@@ -148,18 +140,4 @@ export default StyleSheet.create({
         shadowRadius: 9.51,
         elevation: 8,
     },
-    font1:
-    {
-        paddingTop: 10,
-        color: 'black',
-        fontSize: 19,
-        
-    },
-    button:
-    {
-        backgroundColor: colors.buttonColor,
-        marginLeft: 'auto',
-        marginRight: 30,
-        marginTop: 10
-    }
 });

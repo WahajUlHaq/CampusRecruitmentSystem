@@ -10,6 +10,9 @@ import CompanyHome from '../../screens/Home/Company/index';
 import AddJob from '../../screens/Add Job/index';
 import Application_User from '../../screens/Application/Student';
 import ViewJob_User from '../../screens/ViewJob/Students';
+import StudentProfile from '../../screens/StudentProfile/index';
+import AllStudents from '../../screens/Application/AllUsers';
+
 // import AllJobs_Student from '../../screens/Jobs/index'
 const Stack = createStackNavigator();
 
@@ -132,10 +135,38 @@ function Navigation(props) {
           }}
         />
 
+        <Stack.Screen hideNavBar={true} name="StudentProfile" component={StudentProfile}
+          options={{
+            title: '',
+            headerStyle: {
+              backgroundColor: color.headerColor,
+              height: -10
+            },
+            headerTintColor: '#3250ce',
+            headerTitleStyle: {
+              fontWeight: 'bold',
+            },
+          }}
+        />
+
+        <Stack.Screen hideNavBar={true} name="AllStudents" component={AllStudents}
+          options={{
+            title: '',
+            headerStyle: {
+              backgroundColor: color.headerColor,
+              height: -10
+            },
+            headerTintColor: '#3250ce',
+            headerTitleStyle: {
+              fontWeight: 'bold',
+            },
+          }}
+        />
+
       </Stack.Navigator>
     </NavigationContainer>
-  ); 
-}
+  );
+} 
 Application_User
 
 export default Navigation;

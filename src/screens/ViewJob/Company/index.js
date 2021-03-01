@@ -126,7 +126,7 @@ function ViewJob_User(props) {
                     style={style.subContainer2}>
                     <Text
                         style={style.f3}>
-                        Job Details
+                        Job Details {Status}
                     </Text>
                     <ScrollView
                         showsVerti jcalScrollIndicator={false}

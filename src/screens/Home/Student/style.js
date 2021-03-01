@@ -162,7 +162,7 @@ export default StyleSheet.create({
     {
         paddingTop: 10,
         color: 'black',
-        fontSize: 20,
+        fontSize: 19,
         
     },
     button:

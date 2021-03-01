@@ -115,5 +115,51 @@ export default StyleSheet.create({
     {
         fontSize: 18,
         color: "white"
+    },
+    myMainDispayCont:
+    {
+        marginLeft: 5,
+        marginRight: -40,
+        flex: 1,
+        height: 70,
+        flexDirection: 'row',
+        width: "100%",
+        backgroundColor: 'white',
+        marginBottom: 10,
+        borderBottomColor: '#D3D3D3',
+        borderBottomWidth: 2,
+
+    },
+    button1:
+    {
+        backgroundColor: colors.buttonColor,
+        marginLeft: 'auto',
+        marginRight: 10,
+        marginTop: 10,
+        paddingTop: 2,
+        borderRadius: 10,
+        height: "70%",
+        shadowColor: "#000",
+        shadowOffset: {
+            width: 0,
+            height: 7,
+        },
+        shadowOpacity: 0.43,
+        shadowRadius: 9.51,
+        elevation: 8,
+    },
+    font1:
+    {
+        paddingTop: 10,
+        color: 'black',
+        fontSize: 19,
+        
+    },
+    button:
+    {
+        backgroundColor: colors.buttonColor,
+        marginLeft: 'auto',
+        marginRight: 30,
+        marginTop: 10
     }
 });

@@ -146,7 +146,8 @@ function StudentRegister(props) {
             })
 
                 .then(() => {
-                    setStatus('Registered')
+                    setStatus('Registered Successfully')
+                    props.navigation.navigate("Login")
                 })
 
                 .catch((error) => {
@@ -208,7 +209,7 @@ function StudentRegister(props) {
                                 <Label>Student Name</Label>
                                 <Input
                                     autoCompleteType="off"
-                                    maxLength={16}
+                                    maxLength={20}
                                     onChangeText={(text) => setName(text)}
                                     keyboardType="default"
                                     keyboardAppearance="dark" />

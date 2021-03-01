@@ -152,7 +152,7 @@ function AddJob(props) {
                                 <Label>Job Title</Label>
                                 <Input
                                     autoCompleteType="off"
-                                    maxLength={27}
+                                    maxLength={25}
                                     onChangeText={(text) => setJobName(text)}
                                     keyboardType="default"
                                     keyboardAppearance="dark" />

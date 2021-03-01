@@ -28,7 +28,6 @@ function StudentHome(props) {
     const [jobs, setJobs] = useState([])
 
     useEffect(() => {
-
         database().ref("/").child("Jobs").on("child_added", (result) => {
             Alldata.push(result.val());
             setJobs(Alldata);

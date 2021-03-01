@@ -32,9 +32,12 @@ function FooterCompany(props) {
     const toLogin = () => {
         navigation.navigate("Login")
     }
+    const toAllStd = () => {
+        navigation.navigate("AllStudents", { UserName: props.UserName })
+    }
     return (
 
-        <Footer style={styles.bg}>
+        <Footer style={styles.bg}> 
             <FooterTab style={styles.bg}>
 
                 <Button style={styles.bg} vertical active
@@ -47,8 +50,15 @@ function FooterCompany(props) {
                 <Button style={styles.bg} vertical active
                     onPress={() => toApplication()}
                 >
+                    <Icon active name="book" />
+                    <Text>Application</Text>
+                </Button>
+
+                <Button style={styles.bg} vertical active
+                    onPress={() => toAllStd()}
+                >
                     <Icon active name="person" />
-                    <Text>Applications</Text>
+                    <Text>Students</Text>
                 </Button>
 
                 <Button style={styles.bg} vertical active

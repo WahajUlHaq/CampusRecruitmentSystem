@@ -74,6 +74,8 @@ function CompnayRegister(props) {
             })
                 .then(() => {
                     setStatus('Registered Successfully')
+                    props.navigation.navigate("Login")
+
                 })
                 .catch(() => {
                     setStatus('Error Contact Admin')

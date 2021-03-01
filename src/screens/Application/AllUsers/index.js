@@ -20,7 +20,7 @@ import colors from '../../../config/colorsConfig/index';
 import header from '../../../config/headerConfig/index';
 import style from './style';
 import FooterCompany from '../../../component/footer/footerCompany/index'
-function CompanyHome(props) {
+function AllStudents(props) {
 
     //const [companyName, setCompanyName] = useState(null)
     const { UserName } = props.route.params;
@@ -29,14 +29,14 @@ function CompanyHome(props) {
     const [jobs, setJobs] = useState([])
 
     useEffect(() => {
-        database().ref("/").child("Companies/" + UserName + "/Applications/").on("child_added", (result) => {
+        database().ref("/").child("Students/").on("child_added", (result) => {
             Alldata.push(result.val());
             setJobs(Alldata);
         })
     }, []);
 
-    const moreInfo = (e,a) => {
-        props.navigation.navigate("StudentProfile", {UserName: UserName, id: e, studentUserName: a})
+    const moreInfo = (e) => {
+        props.navigation.navigate("StudentProfile", {UserName: UserName, studentUserName: e})
     }
 
     return (
@@ -68,7 +68,7 @@ function CompanyHome(props) {
                     style={style.subContainer2}>
                     <Text
                         style={style.f3}>
-                        Job Applications
+                        All Students
                     </Text>
 
                     <ScrollView
@@ -84,14 +84,14 @@ function CompanyHome(props) {
                                         <View style={style.myMainDispayCont}>
                                             <Text style={style.font1}>{data.item.StudentName}{"\n"}
                                                 <Text style={{ fontSize: 17, paddingTop: 18, color: colors.buttonColor }}>
-                                                   {data.item.JobTitle}
+                                                   {data.item.StudentTitle}
                                                 </Text>
                                             </Text>
                                             <Button style={style.button} block success>
                                             </Button>
                                             <TouchableOpacity
                                                 style={style.button1}
-                                                onPress={() => moreInfo(data.item.JobID,data.item.StudentID)}
+                                                onPress={() => moreInfo(data.item.StudentName)}
                                                 activeOpacity={0.9}>
                                                 <Text
                                                     style={{ height: "80%", paddingTop: 12, paddingLeft: 12, paddingRight: 10, color: 'white', fontWeight: 'bold' }}>
@@ -114,4 +114,4 @@ function CompanyHome(props) {
     );
 };
 
-export default CompanyHome;
+export default AllStudents;

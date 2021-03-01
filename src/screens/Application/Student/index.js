@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import {
     SafeAreaView,
     StyleSheet,
@@ -8,7 +8,8 @@ import {
     StatusBar,
     Image,
     TouchableOpacity,
-    Picker
+    Picker,
+    FlatList
 } from 'react-native';
 
 
@@ -23,6 +24,21 @@ import FooterStudent from '../../../component/footer/footerStudent/index';
 function Application_User(props) {
 
     const { UserName } = props.route.params;
+    const [Alldata, setData] = useState([])
+    const [jobs, setJobs] = useState([])
+
+    useEffect(() => {
+
+        database().ref("/").child("Students/" + UserName + "/Applications/").on("child_added", (result) => {
+            Alldata.push(result.val());
+            setJobs(Alldata);
+        })
+    }, []);
+
+    const moreInfo = (e, a) => {
+        props.navigation.navigate("ViewJob_User", { UserName: UserName, id: e, applicationID: a })
+        // console.log(e, UserName)
+    }
 
     return (
         <>
@@ -53,20 +69,43 @@ function Application_User(props) {
                     style={style.subContainer2}>
                     <Text
                         style={style.f3}>
-
+                        Applied Jobs
                     </Text>
+
                     <ScrollView
                         showsVerti jcalScrollIndicator={false}
                         showsHorizontalScrollIndicator={false}>
+                        <FlatList
+                            data={jobs}
+                            key={jobs.key}
+                            renderItem={(data) => {
+                                return (
 
-                        <View>
-                            <Text>
-                                STD HOME
-                          </Text>
-                        </View>
+                                    <View>
+                                        <View style={style.myMainDispayCont}>
+                                            <Text style={style.font1}>{data.item.JobTitle}{"\n"}
+                                                <Text style={{ fontSize: 17, paddingTop: 18, color: colors.buttonColor }}>
+                                                    Skills: {data.item.Skills}
+                                                </Text>
+                                            </Text>
+                                            <Button style={style.button} block success>
+                                            </Button>
+                                            <TouchableOpacity
+                                                style={style.button1}
+                                                onPress={() => moreInfo(data.item.JobID, data.item.id )}
+                                                activeOpacity={0.9}>
+                                                <Text
+                                                    style={{ height: "80%", paddingTop: 12, paddingLeft: 12, paddingRight: 10, color: 'white', fontWeight: 'bold' }}>
+                                                    More Info
+                                    </Text>
+                                            </ TouchableOpacity>
 
+                                        </View>
+                                    </View>
+                                )
+                            }}
+                            keyExtractor={users => users.id} />
                     </ScrollView>
-
 
                 </View>
 
